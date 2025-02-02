@@ -7,6 +7,8 @@
     <meta name="description" content="GrowHub Solutions offers professional website development, social media design, Shopify store creation, and social media management services.">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -23,32 +25,38 @@
     </header>
 
     <main>
-        <section class="slider">
-            <div class="slide active">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80" alt="Digital Marketing">
-                <div class="slide-content">
-                    <h2>Grow Your Online Presence</h2>
-                    <p>Professional digital solutions for your business</p>
-                    <a href="services.html" class="cta-button">Explore Our Services</a>
+        <section class="hero">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80" alt="Digital Marketing">
+                        <div class="slide-content">
+                            <h2>Grow Your Online Presence</h2>
+                            <p>Professional digital solutions for your business</p>
+                            <a href="services.html" class="cta-button">Explore Our Services</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80" alt="Web Development">
+                        <div class="slide-content">
+                            <h2>Custom Web Solutions</h2>
+                            <p>Tailored websites for your unique needs</p>
+                            <a href="services.html" class="cta-button">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80" alt="Social Media Management">
+                        <div class="slide-content">
+                            <h2>Boost Your Social Presence</h2>
+                            <p>Effective social media management strategies</p>
+                            <a href="services.html" class="cta-button">Get Started</a>
+                        </div>
+                    </div>
                 </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-            <div class="slide">
-                <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80" alt="Web Development">
-                <div class="slide-content">
-                    <h2>Custom Web Solutions</h2>
-                    <p>Tailored websites for your unique needs</p>
-                    <a href="services.html" class="cta-button">Learn More</a>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80" alt="Social Media Management">
-                <div class="slide-content">
-                    <h2>Boost Your Social Presence</h2>
-                    <p>Effective social media management strategies</p>
-                    <a href="services.html" class="cta-button">Get Started</a>
-                </div>
-            </div>
-            <div class="slider-nav"></div>
         </section>
 
         <section id="about">
@@ -109,7 +117,38 @@
     </main>
 
     <footer>
-        <p>&copy; 2023 GrowHub Solutions. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html#web-development">Web Development</a></li>
+                    <li><a href="services.html#social-media">Social Media Management</a></li>
+                    <li><a href="services.html#shopify">Shopify Store Creation</a></li>
+                    <li><a href="services.html#seo">SEO Optimization</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <ul class="social-links">
+                    <li><a href="https://facebook.com/growhubsolutions" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="https://instagram.com/growhubsolutions" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://twitter.com/growhubsolutions" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                    <li><a href="https://linkedin.com/company/growhubsolutions" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 GrowHub Solutions. All rights reserved.</p>
+        </div>
     </footer>
 
     <div id="chatbot-icon">
@@ -122,8 +161,10 @@
             <button id="close-chatbot">&times;</button>
         </div>
         <div id="chatbot-messages"></div>
-        <input type="text" id="chatbot-input" placeholder="Type your message...">
+        <form id="chatbot-form">
+            <input type="text" id="chatbot-input" placeholder="Type your message...">
+            <button type="submit">Send</button>
+        </form>
     </div>
 </body>
 </html>
-

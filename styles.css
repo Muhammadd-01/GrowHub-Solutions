@@ -308,6 +308,57 @@
     cursor: pointer;
   }
   
+  .user-message,
+  .bot-message {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    max-width: 80%;
+  }
+  
+  .user-message {
+    background-color: #e6e6e6;
+    align-self: flex-end;
+    margin-left: auto;
+  }
+  
+  .bot-message {
+    background-color: #f0f0f0;
+    align-self: flex-start;
+  }
+  
+  #contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .form-group textarea {
+    height: 150px;
+  }
+  
+  .error-message {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+  }
+  
   @media (max-width: 768px) {
     nav {
       flex-direction: column;
@@ -339,100 +390,6 @@
   
     .slide-content p {
       font-size: 1rem;
-    }
-  }
-  
-  /* Portfolio styles */
-  #portfolio-hero {
-    background: var(--gradient);
-    color: var(--secondary-color);
-    text-align: center;
-    padding: 4rem 2rem;
-  }
-  
-  #portfolio-hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  #portfolio-grid {
-    padding: 4rem 2rem;
-  }
-  
-  .portfolio-item {
-    text-align: center;
-  }
-  
-  .portfolio-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-  }
-  
-  .portfolio-item h3 {
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Testimonial styles */
-  .testimonial {
-    text-align: center;
-  }
-  
-  .testimonial img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-  }
-  
-  .client-name {
-    font-weight: bold;
-    margin-top: 0.5rem;
-  }
-  
-  /* Newsletter form styles */
-  #newsletter-form {
-    display: flex;
-    margin-top: 1rem;
-  }
-  
-  #newsletter-form input[type="email"] {
-    flex: 1;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 3px 0 0 3px;
-  }
-  
-  #newsletter-form button {
-    padding: 0.5rem 1rem;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    border: none;
-    border-radius: 0 3px 3px 0;
-    cursor: pointer;
-  }
-  
-  /* Responsive improvements */
-  @media (max-width: 768px) {
-    .footer-content {
-      flex-direction: column;
-    }
-  
-    .footer-section {
-      margin-bottom: 2rem;
-    }
-  
-    #newsletter-form {
-      flex-direction: column;
-    }
-  
-    #newsletter-form input[type="email"],
-    #newsletter-form button {
-      width: 100%;
-      border-radius: 3px;
-      margin-bottom: 0.5rem;
     }
   }
   

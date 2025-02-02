@@ -7,20 +7,22 @@ import "swiper/css/pagination"
 
 document.addEventListener("DOMContentLoaded", () => {
   // Swiper initialization
-  const swiper = new Swiper(".swiper", {
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    autoplay: {
-      delay: 5000,
-    },
-  })
+  if (document.querySelector(".swiper")) {
+    const swiper = new Swiper(".swiper", {
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      autoplay: {
+        delay: 5000,
+      },
+    })
+  }
 
   // Chatbot functionality
   const chatbotIcon = document.getElementById("chatbot-icon")
@@ -40,11 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
       "We offer web development, mobile app development, social media management, Shopify store creation, SEO optimization, and cloud solutions. Which service are you interested in?",
     pricing: "Our pricing varies depending on the project scope. Would you like to discuss a specific service?",
     contact:
-      "You can reach us at +92 123 456 7890 or email us at contact@growhubsolutions.com. Would you like to schedule a call?",
-    portfolio:
-      "You can view our portfolio at growhubsolutions.com/portfolio. It showcases our recent projects across various industries.",
+      "You can reach us at +92 123 456 7890 or email us at contactgrowhub@gmail.com. Would you like to schedule a call?",
     default:
-      "I'm not sure I understand. Can you please rephrase or ask about our services, pricing, portfolio, or contact information?",
+      "I'm not sure I understand. Can you please rephrase or ask about our services, pricing, or contact information?",
   }
 
   function getRandomResponse(responses) {
@@ -80,8 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return botResponses.pricing
     } else if (lowerMessage.includes("contact") || lowerMessage.includes("reach")) {
       return botResponses.contact
-    } else if (lowerMessage.includes("portfolio") || lowerMessage.includes("projects")) {
-      return botResponses.portfolio
     } else {
       return botResponses.default
     }
@@ -101,20 +99,99 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
-  // Animate sections on scroll
-  const sections = document.querySelectorAll("section")
-  const sectionObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible")
-          observer.unobserve(entry.target)
-        }
-      })
-    },
-    { threshold: 0.1 },
-  )
+  // Form validation
+  const contactForm = document.getElementById("contact-form")
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault()
+      if (validateForm()) {
+        alert("Thank you for your message. We will get back to you soon!")
+        contactForm.reset()
+      }
+    })
+  }
 
-  sections.forEach((section) => sectionObserver.observe(section))
+  function validateForm() {
+    const name = document.getElementById("name")
+    const email = document.getElementById("email")
+    const subject = document.getElementById("subject")
+    const message = document.getElementById("message")
+    let isValid = true
+
+    if (name.value.trim() === "") {
+      setErrorFor(name, "Name cannot be blank")
+      isValid = false
+    } else {
+      setSuccessFor(name)
+    }
+
+    if (email.value.trim() === "") {
+      setErrorFor(email, "Email cannot be blank")
+      isValid = false
+    } else if (!isValidEmail(email.value.trim())) {
+      setErrorFor(email, "Email is not valid")
+      isValid = false
+    } else {
+      setSuccessFor(email)
+    }
+
+    if (subject.value.trim() === "") {
+      setErrorFor(subject, "Subject cannot be blank")
+      isValid = false
+    } else {
+      setSuccessFor(subject)
+    }
+
+    if (message.value.trim() === "") {
+      setErrorFor(message, "Message cannot be blank")
+      isValid = false
+    } else {
+      setSuccessFor(message)
+    }
+
+    return isValid
+  }
+
+  function setErrorFor(input, message) {
+    const formGroup = input.parentElement
+    const errorMessage = formGroup.querySelector(".error-message")
+    formGroup.classList.add("error")
+    if (errorMessage) {
+      errorMessage.innerText = message
+    } else {
+      const msgElement = document.createElement("div")
+      msgElement.classList.add("error-message")
+      msgElement.innerText = message
+      formGroup.appendChild(msgElement)
+    }
+  }
+
+  function setSuccessFor(input) {
+    const formGroup = input.parentElement
+    formGroup.classList.remove("error")
+    const errorMessage = formGroup.querySelector(".error-message")
+    if (errorMessage) {
+      formGroup.removeChild(errorMessage)
+    }
+  }
+
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  }
+
+  // Newsletter form submission
+  const newsletterForm = document.getElementById("newsletter-form")
+  if (newsletterForm) {
+    newsletterForm.addEventListener("submit", (e) => {
+      e.preventDefault()
+      const emailInput = newsletterForm.querySelector('input[type="email"]')
+      if (isValidEmail(emailInput.value.trim())) {
+        alert("Thank you for subscribing to our newsletter!")
+        newsletterForm.reset()
+      } else {
+        alert("Please enter a valid email address.")
+      }
+    })
+  }
 })
 

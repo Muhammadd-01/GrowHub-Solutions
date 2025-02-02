@@ -22,9 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
         delay: 5000,
         disableOnInteraction: false,
       },
-      effect: 'fade',
+      effect: "fade",
       fadeEffect: {
-        crossFade: true
+        crossFade: true,
       },
     })
   }
@@ -58,13 +58,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   chatbotIcon.addEventListener("click", () => {
     chatbot.classList.remove("hidden")
+    setTimeout(() => {
+      chatbot.style.opacity = "1"
+      chatbot.style.transform = "translateY(0)"
+    }, 10)
     if (chatbotMessages.children.length === 0) {
       addMessage(getRandomResponse(botResponses.greeting))
     }
   })
 
   closeChatbot.addEventListener("click", () => {
-    chatbot.classList.add("hidden")
+    chatbot.style.opacity = "0"
+    chatbot.style.transform = "translateY(20px)"
+    setTimeout(() => {
+      chatbot.classList.add("hidden")
+    }, 300)
   })
 
   function addMessage(message, isUser = false) {

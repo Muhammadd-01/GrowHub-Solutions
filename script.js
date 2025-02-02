@@ -31,18 +31,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const chatbotInput = document.getElementById("chatbot-input")
 
   const botResponses = {
-    hello: "Hello! How can I help you today?",
+    greeting: [
+      "Hello! How can I help you today?",
+      "Hi there! What can I do for you?",
+      "Welcome! How may I assist you?",
+    ],
     services:
-      "We offer website development, social media designs, Shopify store creation, and social media management. Which service are you interested in?",
-    pricing: "Our pricing packages start from PKR 10,000. Would you like more details on our pricing?",
+      "We offer web development, mobile app development, social media management, Shopify store creation, SEO optimization, and cloud solutions. Which service are you interested in?",
+    pricing: "Our pricing varies depending on the project scope. Would you like to discuss a specific service?",
     contact:
-      "You can reach us at +92 123 456 7890 or email us at contact@growhubsolutions.com. How would you like to get in touch?",
+      "You can reach us at +92 123 456 7890 or email us at contact@growhubsolutions.com. Would you like to schedule a call?",
+    portfolio:
+      "You can view our portfolio at growhubsolutions.com/portfolio. It showcases our recent projects across various industries.",
     default:
-      "I'm sorry, I didn't understand that. Can you please rephrase or ask about our services, pricing, or contact information?",
+      "I'm not sure I understand. Can you please rephrase or ask about our services, pricing, portfolio, or contact information?",
+  }
+
+  function getRandomResponse(responses) {
+    return Array.isArray(responses) ? responses[Math.floor(Math.random() * responses.length)] : responses
   }
 
   chatbotIcon.addEventListener("click", () => {
     chatbot.classList.remove("hidden")
+    if (chatbotMessages.children.length === 0) {
+      addMessage(getRandomResponse(botResponses.greeting))
+    }
   })
 
   closeChatbot.addEventListener("click", () => {
@@ -52,31 +65,26 @@ document.addEventListener("DOMContentLoaded", () => {
   function addMessage(message, isUser = false) {
     const messageElement = document.createElement("div")
     messageElement.textContent = message
-    messageElement.style.marginBottom = "10px"
-    messageElement.style.padding = "5px"
-    messageElement.style.borderRadius = "5px"
-    messageElement.style.maxWidth = "80%"
-
-    if (isUser) {
-      messageElement.style.backgroundColor = "#f0f0f0"
-      messageElement.style.marginLeft = "auto"
-    } else {
-      messageElement.style.backgroundColor = "#ff6666"
-      messageElement.style.color = "white"
-    }
-
+    messageElement.className = isUser ? "user-message" : "bot-message"
     chatbotMessages.appendChild(messageElement)
     chatbotMessages.scrollTop = chatbotMessages.scrollHeight
   }
 
   function getBotResponse(message) {
     const lowerMessage = message.toLowerCase()
-    for (const key in botResponses) {
-      if (lowerMessage.includes(key)) {
-        return botResponses[key]
-      }
+    if (lowerMessage.includes("hello") || lowerMessage.includes("hi")) {
+      return getRandomResponse(botResponses.greeting)
+    } else if (lowerMessage.includes("services")) {
+      return botResponses.services
+    } else if (lowerMessage.includes("pricing") || lowerMessage.includes("cost")) {
+      return botResponses.pricing
+    } else if (lowerMessage.includes("contact") || lowerMessage.includes("reach")) {
+      return botResponses.contact
+    } else if (lowerMessage.includes("portfolio") || lowerMessage.includes("projects")) {
+      return botResponses.portfolio
+    } else {
+      return botResponses.default
     }
-    return botResponses.default
   }
 
   chatbotForm.addEventListener("submit", (e) => {

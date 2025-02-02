@@ -20,6 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       autoplay: {
         delay: 5000,
+        disableOnInteraction: false,
+      },
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
       },
     })
   }

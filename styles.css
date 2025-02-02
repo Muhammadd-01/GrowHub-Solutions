@@ -18,6 +18,9 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
   }
   
   header {
@@ -54,11 +57,11 @@
   nav ul li a {
     color: var(--secondary-color);
     text-decoration: none;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
   }
   
   nav ul li a:hover {
-    opacity: 0.8;
+    color: #ffcc00;
   }
   
   main {
@@ -91,11 +94,12 @@
     padding: 1.5rem;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
   }
   
   .grid-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
   
   .grid-item img {
@@ -112,7 +116,7 @@
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
   }
   
   .cta-button {
@@ -122,6 +126,7 @@
   
   .cta-button:hover {
     background-color: #cc0000;
+    transform: scale(1.05);
   }
   
   .secondary-button {
@@ -132,6 +137,7 @@
   
   .secondary-button:hover {
     background-color: #f8f8f8;
+    transform: scale(1.05);
   }
   
   footer {
@@ -171,11 +177,11 @@
   .footer-section ul li a {
     color: var(--secondary-color);
     text-decoration: none;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
   }
   
   .footer-section ul li a:hover {
-    opacity: 0.8;
+    color: #ffcc00;
   }
   
   .footer-bottom {
@@ -197,6 +203,12 @@
   
   .swiper-slide {
     position: relative;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .swiper-slide-active {
+    opacity: 1;
   }
   
   .swiper-slide img {
@@ -391,6 +403,56 @@
     .slide-content p {
       font-size: 1rem;
     }
+  }
+  
+  /* Background animation */
+  @keyframes gradientAnimation {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+  
+  
+  /* Enhanced transitions and hovers */
+  .grid-item, .cta-button, .secondary-button, nav ul li a, .footer-section ul li a {
+      transition: all 0.3s ease;
+  }
+  
+  .grid-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cta-button:hover, .secondary-button:hover {
+      transform: scale(1.05);
+  }
+  
+  nav ul li a:hover, .footer-section ul li a:hover {
+      color: #ffcc00;
+  }
+  
+  /* Slider enhancements */
+  .swiper-slide {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+  }
+  
+  .swiper-slide-active {
+      opacity: 1;
+  }
+  
+  .swiper-button-next, .swiper-button-prev {
+      color: var(--primary-color);
+  }
+  
+  .swiper-pagination-bullet-active {
+      background-color: var(--primary-color);
   }
   
   

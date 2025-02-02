@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const chatbotIcon = document.getElementById("chatbot-icon")
+    const chatbot = document.getElementById("chatbot")
+    const closeChatbot = document.getElementById("close-chatbot")
     const chatbotMessages = document.getElementById("chatbot-messages")
     const chatbotInput = document.getElementById("chatbot-input")
   
@@ -12,6 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
       default:
         "I'm sorry, I didn't understand that. Can you please rephrase or ask about our services, pricing, or contact information?",
     }
+  
+    chatbotIcon.addEventListener("click", () => {
+      chatbot.classList.remove("hidden")
+    })
+  
+    closeChatbot.addEventListener("click", () => {
+      chatbot.classList.add("hidden")
+    })
   
     function addMessage(message, isUser = false) {
       const messageElement = document.createElement("div")
@@ -55,6 +66,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 500)
       }
     })
+  
+    // Form submission handling
+    const contactForm = document.getElementById("contact-form")
+    if (contactForm) {
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault()
+        alert("Thank you for your message. We will get back to you soon!")
+        contactForm.reset()
+      })
+    }
   })
   
   

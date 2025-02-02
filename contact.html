@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - GrowHub Solutions</title>
+    <meta name="description" content="Get in touch with GrowHub Solutions for professional digital services. We're here to help you grow your online presence.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">GrowHub Solutions</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact">
+            <h1>Contact Us</h1>
+            <p>Get in touch with GrowHub Solutions</p>
+            <div class="contact-info">
+                <p>Phone: +92 123 456 7890</p>
+                <p>Email: contact@growhubsolutions.com</p>
+            </div>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+            <div class="social-links">
+                <a href="https://facebook.com/growhubsolutions" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://instagram.com/growhubsolutions" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 GrowHub Solutions. All rights reserved.</p>
+    </footer>
+
+    <div id="chatbot-icon">
+        <img src="chat-icon.svg" alt="Chat with us">
+    </div>
+
+    <div id="chatbot" class="hidden">
+        <div id="chatbot-header">
+            <span>Chat with us</span>
+            <button id="close-chatbot">&times;</button>
+        </div>
+        <div id="chatbot-messages"></div>
+        <input type="text" id="chatbot-input" placeholder="Type your message...">
+    </div>
+</body>
+</html>
+

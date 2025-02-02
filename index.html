@@ -13,10 +13,10 @@
         <nav>
             <div class="logo">GrowHub Solutions</div>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -25,10 +25,11 @@
         <section id="home">
             <h1>Welcome to GrowHub Solutions</h1>
             <p>Your partner for professional digital services</p>
+            <a href="services.html" class="cta-button">Explore Our Services</a>
         </section>
 
-        <section id="services">
-            <h2>Our Services</h2>
+        <section id="featured-services">
+            <h2>Our Featured Services</h2>
             <div class="service-grid">
                 <div class="service-item">
                     <h3>Website Development</h3>
@@ -38,61 +39,21 @@
                     <h3>Social Media Designs</h3>
                     <p>Eye-catching designs for your social media presence</p>
                 </div>
-                <div class="service-item">
-                    <h3>Shopify Store Creation</h3>
-                    <p>Set up and customize your e-commerce store</p>
-                </div>
-                <div class="service-item">
-                    <h3>Social Media Management</h3>
-                    <p>Comprehensive management of your social media accounts</p>
-                </div>
             </div>
+            <a href="services.html" class="secondary-button">View All Services</a>
         </section>
 
-        <section id="pricing">
-            <h2>Pricing Packages</h2>
-            <div class="pricing-grid">
-                <div class="pricing-item">
-                    <h3>Basic</h3>
-                    <p class="price">PKR 10,000</p>
-                    <ul>
-                        <li>Website Development</li>
-                        <li>Basic SEO</li>
-                        <li>1 Social Media Design</li>
-                    </ul>
+        <section id="testimonials">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <p>"GrowHub Solutions transformed our online presence. Highly recommended!"</p>
+                    <p class="client-name">- Sarah K., Small Business Owner</p>
                 </div>
-                <div class="pricing-item">
-                    <h3>Standard</h3>
-                    <p class="price">PKR 25,000</p>
-                    <ul>
-                        <li>Website Development</li>
-                        <li>Advanced SEO</li>
-                        <li>5 Social Media Designs</li>
-                        <li>Basic Social Media Management</li>
-                    </ul>
+                <div class="testimonial-item">
+                    <p>"Professional, responsive, and delivers results. A great partner for digital growth."</p>
+                    <p class="client-name">- Ahmed R., E-commerce Entrepreneur</p>
                 </div>
-                <div class="pricing-item">
-                    <h3>Premium</h3>
-                    <p class="price">PKR 50,000</p>
-                    <ul>
-                        <li>Website Development</li>
-                        <li>Advanced SEO</li>
-                        <li>10 Social Media Designs</li>
-                        <li>Full Social Media Management</li>
-                        <li>Shopify Store Setup</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Get in touch with GrowHub Solutions</p>
-            <p>Phone: +92 123 456 7890</p>
-            <p>Email: contact@growhubsolutions.com</p>
-            <div class="social-links">
-                <a href="https://facebook.com/growhubsolutions" target="_blank" rel="noopener noreferrer">Facebook</a>
-                <a href="https://instagram.com/growhubsolutions" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
         </section>
     </main>
@@ -101,8 +62,15 @@
         <p>&copy; 2023 GrowHub Solutions. All rights reserved.</p>
     </footer>
 
-    <div id="chatbot">
-        <div id="chatbot-header">Chat with us</div>
+    <div id="chatbot-icon">
+        <img src="chat-icon.svg" alt="Chat with us">
+    </div>
+
+    <div id="chatbot" class="hidden">
+        <div id="chatbot-header">
+            <span>Chat with us</span>
+            <button id="close-chatbot">&times;</button>
+        </div>
         <div id="chatbot-messages"></div>
         <input type="text" id="chatbot-input" placeholder="Type your message...">
     </div>

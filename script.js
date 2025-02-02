@@ -76,6 +76,35 @@ document.addEventListener("DOMContentLoaded", () => {
         contactForm.reset()
       })
     }
+  
+    // Slider functionality
+    const slides = document.querySelectorAll(".slide")
+    const sliderNav = document.querySelector(".slider-nav")
+    let currentSlide = 0
+  
+    // Create slider navigation dots
+    slides.forEach((_, index) => {
+      const dot = document.createElement("div")
+      dot.classList.add("slider-nav-item")
+      if (index === 0) dot.classList.add("active")
+      dot.addEventListener("click", () => goToSlide(index))
+      sliderNav.appendChild(dot)
+    })
+  
+    function goToSlide(n) {
+      slides[currentSlide].classList.remove("active")
+      sliderNav.children[currentSlide].classList.remove("active")
+      currentSlide = (n + slides.length) % slides.length
+      slides[currentSlide].classList.add("active")
+      sliderNav.children[currentSlide].classList.add("active")
+    }
+  
+    function nextSlide() {
+      goToSlide(currentSlide + 1)
+    }
+  
+    // Auto-advance slides every 5 seconds
+    setInterval(nextSlide, 5000)
   })
   
   

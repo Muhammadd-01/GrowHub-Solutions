@@ -12,9 +12,12 @@
   }
   
   body {
-    font-family: Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
     line-height: 1.6;
     color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
   
   header {
@@ -57,6 +60,7 @@
   }
   
   main {
+    flex: 1;
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -158,6 +162,108 @@
     color: var(--secondary-color);
     text-align: center;
     padding: 1rem;
+    margin-top: auto;
+  }
+  
+  /* Slider styles */
+  .slider {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+    width: 100%;
+  }
+  
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .slide.active {
+    opacity: 1;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--secondary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .slide-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .slide-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .slider-nav {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+  
+  .slider-nav-item {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .slider-nav-item.active {
+    background-color: var(--secondary-color);
+  }
+  
+  /* Additional styles for improved layout */
+  .section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .grid-item {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .grid-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .grid-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
   }
   
   #chatbot-icon {

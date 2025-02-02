@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrowHub Solutions - Professional Digital Services</title>
     <meta name="description" content="GrowHub Solutions offers professional website development, social media design, Shopify store creation, and social media management services.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
@@ -22,36 +23,85 @@
     </header>
 
     <main>
-        <section id="home">
-            <h1>Welcome to GrowHub Solutions</h1>
-            <p>Your partner for professional digital services</p>
-            <a href="services.html" class="cta-button">Explore Our Services</a>
+        <section class="slider">
+            <div class="slide active">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80" alt="Digital Marketing">
+                <div class="slide-content">
+                    <h2>Grow Your Online Presence</h2>
+                    <p>Professional digital solutions for your business</p>
+                    <a href="services.html" class="cta-button">Explore Our Services</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80" alt="Web Development">
+                <div class="slide-content">
+                    <h2>Custom Web Solutions</h2>
+                    <p>Tailored websites for your unique needs</p>
+                    <a href="services.html" class="cta-button">Learn More</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80" alt="Social Media Management">
+                <div class="slide-content">
+                    <h2>Boost Your Social Presence</h2>
+                    <p>Effective social media management strategies</p>
+                    <a href="services.html" class="cta-button">Get Started</a>
+                </div>
+            </div>
+            <div class="slider-nav"></div>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">About GrowHub Solutions</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Our Mission">
+                    <h3>Our Mission</h3>
+                    <p>At GrowHub Solutions, we're dedicated to helping businesses thrive in the digital world. Our mission is to provide innovative, effective, and tailored digital solutions that drive growth and success for our clients.</p>
+                </div>
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Our Team">
+                    <h3>Our Team</h3>
+                    <p>Our team of experts brings together a wealth of experience in web development, design, digital marketing, and e-commerce. We're passionate about staying ahead of the curve in the ever-evolving digital landscape.</p>
+                </div>
+            </div>
         </section>
 
         <section id="featured-services">
-            <h2>Our Featured Services</h2>
-            <div class="service-grid">
-                <div class="service-item">
+            <h2 class="section-title">Our Featured Services</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Website Development">
                     <h3>Website Development</h3>
-                    <p>Custom-built websites tailored to your needs</p>
+                    <p>Custom-built websites tailored to your needs, optimized for performance and user experience.</p>
                 </div>
-                <div class="service-item">
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Social Media Designs">
                     <h3>Social Media Designs</h3>
-                    <p>Eye-catching designs for your social media presence</p>
+                    <p>Eye-catching designs for your social media presence, crafted to engage and grow your audience.</p>
+                </div>
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Shopify Store Creation">
+                    <h3>Shopify Store Creation</h3>
+                    <p>Professional e-commerce solutions to help you start selling online quickly and efficiently.</p>
                 </div>
             </div>
-            <a href="services.html" class="secondary-button">View All Services</a>
+            <div class="text-center">
+                <a href="services.html" class="cta-button">View All Services</a>
+            </div>
         </section>
 
         <section id="testimonials">
-            <h2>What Our Clients Say</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-item">
-                    <p>"GrowHub Solutions transformed our online presence. Highly recommended!"</p>
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="grid-container">
+                <div class="grid-item testimonial">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Sarah K.">
+                    <p>"GrowHub Solutions transformed our online presence. Their team's expertise and dedication to our project exceeded our expectations. Highly recommended!"</p>
                     <p class="client-name">- Sarah K., Small Business Owner</p>
                 </div>
-                <div class="testimonial-item">
-                    <p>"Professional, responsive, and delivers results. A great partner for digital growth."</p>
+                <div class="grid-item testimonial">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Ahmed R.">
+                    <p>"Professional, responsive, and delivers results. GrowHub Solutions has been a great partner for our digital growth. Their social media management has significantly boosted our engagement."</p>
                     <p class="client-name">- Ahmed R., E-commerce Entrepreneur</p>
                 </div>
             </div>

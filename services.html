@@ -1,76 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ... (keep existing head content) ... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - GrowHub Solutions</title>
+    <meta name="description" content="Explore GrowHub Solutions' comprehensive digital services including web development, SEO, social media management, and more.">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- ... (keep existing header) ... -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">GrowHub Solutions</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <main>
-        <section id="services-hero">
-            <div class="text-container fade-in">
-                <h1>Our Services</h1>
-                <p>Comprehensive digital solutions to help your business grow and thrive in the online world</p>
-            </div>
-        </section>
-
-        <section id="services-list">
-            <div class="grid-container">
-                <div class="grid-item fade-in" id="web-development">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Web Development">
-                    <h2>Website Development</h2>
-                    <ul>
-                        <li>Custom website design and development tailored to your business needs.</li>
-                        <li>Responsive, fast, and user-friendly websites optimized for all devices.</li>
-                        <li>E-commerce integration and online store setup.</li>
-                        <li>Content Management System (CMS) implementation for easy updates.</li>
-                    </ul>
-                </div>
-                <div class="grid-item fade-in" id="seo">
-                    <img src="https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="SEO">
-                    <h2>SEO (Search Engine Optimization)</h2>
-                    <ul>
-                        <li>Comprehensive on-page and off-page SEO to improve search engine rankings.</li>
-                        <li>Keyword research and analysis to target high-value search terms.</li>
-                        <li>Content optimization and creation for better search visibility.</li>
-                        <li>Regular performance tracking and reporting to measure SEO success.</li>
-                    </ul>
-                </div>
-                <div class="grid-item fade-in" id="graphic-design">
-                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Graphic Design">
-                    <h2>Graphic Designing</h2>
-                    <ul>
-                        <li>Eye-catching social media posts, stories, and reels to engage your audience.</li>
-                        <li>Professional logo design and brand identity development.</li>
-                        <li>Custom promotional materials including brochures, flyers, and banners.</li>
-                        <li>Infographic design to present complex information in a visually appealing way.</li>
-                    </ul>
-                </div>
-                <div class="grid-item fade-in" id="shopify">
-                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Shopify Store Creation">
-                    <h2>Shopify Store Creation</h2>
-                    <ul>
-                        <li>Custom Shopify store setup and design to match your brand identity.</li>
-                        <li>Product listings optimization for better visibility and conversions.</li>
-                        <li>Secure payment gateway integrations for smooth transactions.</li>
-                        <li>Training and ongoing support for efficient store management.</li>
-                    </ul>
+        <section id="services-hero" class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2 text-center">
+                        <h1 class="display-4 mb-4">Our Services</h1>
+                        <p class="lead">Comprehensive digital solutions to help your business grow and thrive in the online world</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="cta">
-            <div class="text-container fade-in">
-                <h2>Let's bring your vision to life!</h2>
-                <p>Ready to elevate your online presence? Our team is here to help you achieve your digital goals.</p>
-                <a href="contact.html" class="cta-button">Get in Touch</a>
+        <section id="services-list" class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 shadow-sm fade-in">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Web Development" class="card-img-top">
+                            <div class="card-body">
+                                <h2 class="card-title">Website Development</h2>
+                                <ul class="list-unstyled">
+                                    <li>Custom website design and development tailored to your business needs.</li>
+                                    <li>Responsive, fast, and user-friendly websites optimized for all devices.</li>
+                                    <li>E-commerce integration and online store setup.</li>
+                                    <li>Content Management System (CMS) implementation for easy updates.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 shadow-sm fade-in">
+                            <img src="https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="SEO" class="card-img-top">
+                            <div class="card-body">
+                                <h2 class="card-title">SEO (Search Engine Optimization)</h2>
+                                <ul class="list-unstyled">
+                                    <li>Comprehensive on-page and off-page SEO to improve search engine rankings.</li>
+                                    <li>Keyword research and analysis to target high-value search terms.</li>
+                                    <li>Content optimization and creation for better search visibility.</li>
+                                    <li>Regular performance tracking and reporting to measure SEO success.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 shadow-sm fade-in">
+                            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Graphic Design" class="card-img-top">
+                            <div class="card-body">
+                                <h2 class="card-title">Graphic Designing</h2>
+                                <ul class="list-unstyled">
+                                    <li>Eye-catching social media posts, stories, and reels to engage your audience.</li>
+                                    <li>Professional logo design and brand identity development.</li>
+                                    <li>Custom promotional materials including brochures, flyers, and banners.</li>
+                                    <li>Infographic design to present complex information in a visually appealing way.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 shadow-sm fade-in">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Shopify Store Creation" class="card-img-top">
+                            <div class="card-body">
+                                <h2 class="card-title">Shopify Store Creation</h2>
+                                <ul class="list-unstyled">
+                                    <li>Custom Shopify store setup and design to match your brand identity.</li>
+                                    <li>Product listings optimization for better visibility and conversions.</li>
+                                    <li>Secure payment gateway integrations for smooth transactions.</li>
+                                    <li>Training and ongoing support for efficient store management.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="py-5 bg-danger text-white">
+            <div class="container text-center">
+                <h2 class="mb-4">Let's bring your vision to life!</h2>
+                <p class="lead mb-4">Ready to elevate your online presence? Our team is here to help you achieve your digital goals.</p>
+                <a href="contact.html" class="btn btn-light btn-lg">Get in Touch</a>
             </div>
         </section>
     </main>
 
-    <!-- ... (keep existing footer and chatbot) ... -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <h3>Quick Links</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="about.html" class="text-white">About</a></li>
+                        <li><a href="services.html" class="text-white">Services</a></li>
+                        <li><a href="portfolio.html" class="text-white">Portfolio</a></li>
+                        <li><a href="blog.html" class="text-white">Blog</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h3>Services</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="services.html#web-development" class="text-white">Web Development</a></li>
+                        <li><a href="services.html#seo" class="text-white">SEO Optimization</a></li>
+                        <li><a href="services.html#graphic-design" class="text-white">Graphic Design</a></li>
+                        <li><a href="services.html#shopify" class="text-white">Shopify Store Creation</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h3>Connect With Us</h3>
+                    <ul class="list-unstyled social-links">
+                        <li><a href="https://facebook.com/growhubsolutions" target="_blank" rel="noopener noreferrer" class="text-white">Facebook</a></li>
+                        <li><a href="https://instagram.com/growhubsolutions" target="_blank" rel="noopener noreferrer" class="text-white">Instagram</a></li>
+                        <li><a href="https://twitter.com/growhubsolutions" target="_blank" rel="noopener noreferrer" class="text-white">Twitter</a></li>
+                        <li><a href="https://linkedin.com/company/growhubsolutions" target="_blank" rel="noopener noreferrer" class="text-white">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h3>Newsletter</h3>
+                    <p>Stay updated with our latest news and offers!</p>
+                    <form id="newsletter-form">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Enter your email" required>
+                            <button class="btn btn-danger" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2023 GrowHub Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="chatbot-icon">
+        <img src="chat-icon.svg" alt="Chat with us">
+    </div>
+
+    <div id="chatbot" class="hidden">
+        <div id="chatbot-header">
+            <span>Chat with us</span>
+            <button id="close-chatbot">&times;</button>
+        </div>
+        <div id="chatbot-messages"></div>
+        <form id="chatbot-form">
+            <input type="text" id="chatbot-input" placeholder="Type your message...">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <a href="https://wa.me/923128538773" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </body>
 </html>
 

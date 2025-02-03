@@ -26,6 +26,7 @@
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                         <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                         <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
@@ -40,8 +41,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 offset-md-2 text-center">
-                        <h1 class="display-4 mb-4">Get in Touch</h1>
-                        <p class="lead">We're excited to collaborate with you!</p>
+                        <h1 class="display-4 mb-4 fade-in">Get in Touch</h1>
+                        <p class="lead fade-in">We're excited to collaborate with you!</p>
                     </div>
                 </div>
             </div>
@@ -54,13 +55,13 @@
                         <div class="card h-100 shadow-sm fade-in">
                             <div class="card-body">
                                 <h2 class="card-title">Contact Information</h2>
-                                <p class="card-text">Email: contact@growhubsolutions.com</p>
-                                <p class="card-text">Phone: +92 315 1177817</p>
-                                <div class="social-links">
-                                    <a href="https://facebook.com/growhubsolutions" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger me-2">Facebook</a>
-                                    <a href="https://instagram.com/growhubsolutions" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger me-2">Instagram</a>
-                                    <a href="https://twitter.com/growhubsolutions" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger me-2">Twitter</a>
-                                    <a href="https://linkedin.com/company/growhubsolutions" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger">LinkedIn</a>
+                                <p class="card-text"><i class="fas fa-envelope me-2"></i>Email: contact@growhubsolutions.com</p>
+                                <p class="card-text"><i class="fas fa-phone me-2"></i>Phone: +92 315 1177817</p>
+                                <div class="social-links mt-4">
+                                    <a href="https://facebook.com/growhubsolutions" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger me-2"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="https://instagram.com/growhubsolutions" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger me-2"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com/growhubsolutions" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger me-2"><i class="fab fa-twitter"></i></a>
+                                    <a href="https://linkedin.com/company/growhubsolutions" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger"><i class="fab fa-linkedin-in"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +70,7 @@
                         <div class="card h-100 shadow-sm fade-in">
                             <div class="card-body">
                                 <h2 class="card-title">Office Location</h2>
-                                <p class="card-text">123 Digital Street</p>
+                                <p class="card-text"><i class="fas fa-map-marker-alt me-2"></i>123 Digital Street</p>
                                 <p class="card-text">Tech Park, Karachi 75000</p>
                                 <p class="card-text">Pakistan</p>
                             </div>
@@ -81,9 +82,131 @@
 
         <section id="contact-form" class="py-5 bg-light">
             <div class="container">
-                <h2 class="text-center mb-5">Send Us a Message</h2>
+                <h2 class="text-center mb-5 fade-in">Send Us a Message</h2>
                 <div class="row">
                     <div class="col-md-8 offset-md-2">
                         <form id="contact-form" class="fade-in">
                             <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone (optional)</label>
+                                <input type="tel" class="form-control" id="phone" name="phone">
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" name="subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="service" class="form-label">Interested Service</label>
+                                <select class="form-select" id="service" name="service">
+                                    <option value="">Select a service</option>
+                                    <option value="web-development">Web Development</option>
+                                    <option value="seo">SEO Optimization</option>
+                                    <option value="social-media">Social Media Management</option>
+                                    <option value="graphic-design">Graphic Design</option>
+                                    <option value="shopify">Shopify Store Creation</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-danger btn-lg">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="map" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 fade-in">Find Us</h2>
+                <div class="fade-in">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.5633634026213!2d67.0591931!3d24.8730915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e70a31f45a9%3A0x7e131d1b0a1f7342!2sKarachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1620835670251!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <h3>Quick Links</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="about.html" class="text-white">About</a></li>
+                        <li><a href="services.html" class="text-white">Services</a></li>
+                        <li><a href="pricing.html" class="text-white">Pricing</a></li>
+                        <li><a href="portfolio.html" class="text-white">Portfolio</a></li>
+                        <li><a href="blog.html" class="text-white">Blog</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h3>Services</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="services.html#web-development" class="text-white">Web Development</a></li>
+                        <li><a href="services.html#seo" class="text-white">SEO Optimization</a></li>
+                        <li><a href="services.html#graphic-design" class="text-white">Graphic Design</a></li>
+                        <li><a href="services.html#shopify" class="text-white">Shopify Store Creation</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h3>Connect With Us</h3>
+                    <ul class="list-unstyled social-links">
+                        <li><a href="https://facebook.com/growhubsolutions" target="_blank" rel="noopener noreferrer" class="text-white">Facebook</a></li>
+                        <li><a href="https://instagram.com/growhubsolutions" target="_blank" rel="noopener noreferrer" class="text-white">Instagram</a></li>
+                        <li><a href="https://twitter.com/growhubsolutions" target="_blank" rel="noopener noreferrer" class="text-white">Twitter</a></li>
+                        <li><a href="https://linkedin.com/company/growhubsolutions" target="_blank" rel="noopener noreferrer" class="text-white">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h3>Newsletter</h3>
+                    <p>Stay updated with our latest news and offers!</p>
+                    <form id="newsletter-form">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Enter your email" required>
+                            <button class="btn btn-danger" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2023 GrowHub Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="chatbot-icon">
+        <img src="chat-icon.svg" alt="Chat with us">
+    </div>
+
+    <div id="chatbot" class="hidden">
+        <div id="chatbot-header">
+            <span>Chat with us</span>
+            <button id="close-chatbot">&times;</button>
+        </div>
+        <div id="chatbot-messages"></div>
+        <form id="chatbot-form">
+            <input type="text" id="chatbot-input" placeholder="Type your message...">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <a href="https://wa.me/923128538773" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>
 

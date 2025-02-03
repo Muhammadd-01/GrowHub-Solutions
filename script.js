@@ -1,5 +1,6 @@
 // Import jQuery (assuming you're using a CDN)
-// <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+//<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+const $ = jQuery // Declare $ variable
 
 $(document).ready(() => {
   // Swiper initialization
@@ -140,8 +141,8 @@ $(document).ready(() => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
   }
 
-  // Fade-in effect for elements
-  $(window).on("scroll", () => {
+  // Add fade-in effect for elements
+  function handleScrollAnimation() {
     $(".fade-in").each(function () {
       const elementTop = $(this).offset().top
       const viewportBottom = $(window).scrollTop() + $(window).height()
@@ -149,6 +150,76 @@ $(document).ready(() => {
         $(this).addClass("visible")
       }
     })
+  }
+
+  $(window).on("scroll", handleScrollAnimation)
+  $(window).on("load", handleScrollAnimation)
+
+  // Add scrolled class to navbar on scroll
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 50) {
+      $(".navbar").addClass("scrolled")
+    } else {
+      $(".navbar").removeClass("scrolled")
+    }
   })
+
+  // Smooth scrolling for anchor links
+  $('a[href^="#"]').on("click", function (e) {
+    e.preventDefault()
+    const target = $(this.hash)
+    if (target.length) {
+      $("html, body").animate(
+        {
+          scrollTop: target.offset().top - 70, // Adjust for fixed header
+        },
+        1000,
+      )
+    }
+  })
+
+  // Initialize tooltips
+  $('[data-toggle="tooltip"]').tooltip()
+
+  // Add hover effect to portfolio items
+  $(".portfolio-item").hover(
+    function () {
+      $(this).find(".card-img-top").css("transform", "scale(1.05)")
+    },
+    function () {
+      $(this).find(".card-img-top").css("transform", "scale(1)")
+    },
+  )
+
+  // Add hover effect to blog post cards
+  $(".blog-post").hover(
+    function () {
+      $(this).find(".card-img-top").css("transform", "scale(1.05)")
+    },
+    function () {
+      $(this).find(".card-img-top").css("transform", "scale(1)")
+    },
+  )
+
+  // Add active class to current page in navbar
+  const currentLocation = location.pathname
+  $(".navbar-nav .nav-link").each(function () {
+    const link = $(this).attr("href")
+    if (currentLocation.includes(link)) {
+      $(this).addClass("active")
+    }
+  })
+
+  // Animate pricing cards on hover
+  $(".pricing-card").hover(
+    function () {
+      $(this).css("transform", "translateY(-10px)")
+    },
+    function () {
+      $(this).css("transform", "translateY(0)")
+    },
+  )
+
+  // Fade-in effect for elements (duplicate code removed)
 })
 

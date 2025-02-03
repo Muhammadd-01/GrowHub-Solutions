@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio - GrowHub Solutions</title>
+    <meta name="description" content="Explore GrowHub Solutions' portfolio showcasing our expertise in social media campaigns, graphic designs, Shopify stores, and websites.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">GrowHub Solutions</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="portfolio-hero">
+            <div class="text-container">
+                <h1>Our Creative Work</h1>
+                <p>Showcasing our expertise in digital solutions</p>
+            </div>
+        </section>
+
+        <section id="portfolio-grid">
+            <div class="grid-container">
+                <div class="grid-item portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Social Media Campaign">
+                    <h3>Social Media Campaign</h3>
+                    <p>Increased engagement by 200% for a local restaurant</p>
+                </div>
+                <div class="grid-item portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Graphic Design">
+                    <h3>Brand Identity Design</h3>
+                    <p>Complete rebranding for a tech startup</p>
+                </div>
+                <div class="grid-item portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Shopify Store">
+                    <h3>Shopify Store</h3>
+                    <p>Custom e-commerce solution for a fashion brand</p>
+                </div>
+                <div class="grid-item portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Website Development">
+                    <h3>Corporate Website</h3>
+                    <p>Responsive website for a multinational corporation</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta">
+            <div class="text-container">
+                <h2>Like what you see?</h2>
+                <p>Let's work together! Contact us at contact@growhubsolutions.com</p>
+                <a href="contact.html" class="cta-button">Start Your Project</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html#web-development">Web Development</a></li>
+                    <li><a href="services.html#seo">SEO Optimization</a></li>
+                    <li><a href="services.html#graphic-design">Graphic Design</a></li>
+                    <li><a href="services.html#shopify">Shopify Store Creation</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <ul class="social-links">
+                    <li><a href="https://facebook.com/growhubsolutions" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="https://instagram.com/growhubsolutions" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://twitter.com/growhubsolutions" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                    <li><a href="https://linkedin.com/company/growhubsolutions" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Stay updated with our latest news and offers!</p>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 GrowHub Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="chatbot-icon">
+        <img src="chat-icon.svg" alt="Chat with us">
+    </div>
+
+    <div id="chatbot" class="hidden">
+        <div id="chatbot-header">
+            <span>Chat with us</span>
+            <button id="close-chatbot">&times;</button>
+        </div>
+        <div id="chatbot-messages"></div>
+        <form id="chatbot-form">
+            <input type="text" id="chatbot-input" placeholder="Type your message...">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>
+

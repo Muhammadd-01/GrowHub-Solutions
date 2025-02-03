@@ -1,14 +1,10 @@
-// Import Swiper JS
-import Swiper from "swiper"
-// import Swiper styles
-import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/css/pagination"
+// Import jQuery (assuming you're using a CDN)
+// <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-document.addEventListener("DOMContentLoaded", () => {
+$(document).ready(() => {
   // Swiper initialization
-  if (document.querySelector(".swiper")) {
-    const swiper = new Swiper(".swiper", {
+  if ($(".swiper").length) {
+    new Swiper(".swiper", {
       loop: true,
       navigation: {
         nextEl: ".swiper-button-next",
@@ -30,12 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Chatbot functionality
-  const chatbotIcon = document.getElementById("chatbot-icon")
-  const chatbot = document.getElementById("chatbot")
-  const closeChatbot = document.getElementById("close-chatbot")
-  const chatbotMessages = document.getElementById("chatbot-messages")
-  const chatbotForm = document.getElementById("chatbot-form")
-  const chatbotInput = document.getElementById("chatbot-input")
+  const chatbotIcon = $("#chatbot-icon")
+  const chatbot = $("#chatbot")
+  const closeChatbot = $("#close-chatbot")
+  const chatbotMessages = $("#chatbot-messages")
+  const chatbotForm = $("#chatbot-form")
+  const chatbotInput = $("#chatbot-input")
 
   const botResponses = {
     greeting: [
@@ -56,31 +52,25 @@ document.addEventListener("DOMContentLoaded", () => {
     return Array.isArray(responses) ? responses[Math.floor(Math.random() * responses.length)] : responses
   }
 
-  chatbotIcon.addEventListener("click", () => {
-    chatbot.classList.remove("hidden")
-    setTimeout(() => {
-      chatbot.style.opacity = "1"
-      chatbot.style.transform = "translateY(0)"
-    }, 10)
-    if (chatbotMessages.children.length === 0) {
+  chatbotIcon.on("click", () => {
+    chatbot.removeClass("hidden").animate({ opacity: 1, bottom: "90px" }, 300)
+    if (chatbotMessages.children().length === 0) {
       addMessage(getRandomResponse(botResponses.greeting))
     }
   })
 
-  closeChatbot.addEventListener("click", () => {
-    chatbot.style.opacity = "0"
-    chatbot.style.transform = "translateY(20px)"
-    setTimeout(() => {
-      chatbot.classList.add("hidden")
-    }, 300)
+  closeChatbot.on("click", () => {
+    chatbot.animate({ opacity: 0, bottom: "70px" }, 300, function () {
+      $(this).addClass("hidden")
+    })
   })
 
   function addMessage(message, isUser = false) {
-    const messageElement = document.createElement("div")
-    messageElement.textContent = message
-    messageElement.className = isUser ? "user-message" : "bot-message"
-    chatbotMessages.appendChild(messageElement)
-    chatbotMessages.scrollTop = chatbotMessages.scrollHeight
+    const messageElement = $("<div>")
+      .text(message)
+      .addClass(isUser ? "user-message" : "bot-message")
+    chatbotMessages.append(messageElement)
+    chatbotMessages.scrollTop(chatbotMessages[0].scrollHeight)
   }
 
   function getBotResponse(message) {
@@ -98,12 +88,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  chatbotForm.addEventListener("submit", (e) => {
+  chatbotForm.on("submit", (e) => {
     e.preventDefault()
-    const userMessage = chatbotInput.value.trim()
+    const userMessage = chatbotInput.val().trim()
     if (userMessage !== "") {
       addMessage(userMessage, true)
-      chatbotInput.value = ""
+      chatbotInput.val("")
 
       setTimeout(() => {
         const botResponse = getBotResponse(userMessage)
@@ -113,98 +103,52 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   // Form validation
-  const contactForm = document.getElementById("contact-form")
-  if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault()
-      if (validateForm()) {
-        alert("Thank you for your message. We will get back to you soon!")
-        contactForm.reset()
-      }
-    })
-  }
+  $("#contact-form").on("submit", function (e) {
+    e.preventDefault()
+    if (validateForm()) {
+      alert("Thank you for your message. We will get back to you soon!")
+      this.reset()
+    }
+  })
 
   function validateForm() {
-    const name = document.getElementById("name")
-    const email = document.getElementById("email")
-    const subject = document.getElementById("subject")
-    const message = document.getElementById("message")
     let isValid = true
-
-    if (name.value.trim() === "") {
-      setErrorFor(name, "Name cannot be blank")
-      isValid = false
-    } else {
-      setSuccessFor(name)
-    }
-
-    if (email.value.trim() === "") {
-      setErrorFor(email, "Email cannot be blank")
-      isValid = false
-    } else if (!isValidEmail(email.value.trim())) {
-      setErrorFor(email, "Email is not valid")
-      isValid = false
-    } else {
-      setSuccessFor(email)
-    }
-
-    if (subject.value.trim() === "") {
-      setErrorFor(subject, "Subject cannot be blank")
-      isValid = false
-    } else {
-      setSuccessFor(subject)
-    }
-
-    if (message.value.trim() === "") {
-      setErrorFor(message, "Message cannot be blank")
-      isValid = false
-    } else {
-      setSuccessFor(message)
-    }
-
+    $("#contact-form .form-control").each(function () {
+      if ($(this).val().trim() === "") {
+        $(this).addClass("is-invalid")
+        isValid = false
+      } else {
+        $(this).removeClass("is-invalid")
+      }
+    })
     return isValid
   }
 
-  function setErrorFor(input, message) {
-    const formGroup = input.parentElement
-    const errorMessage = formGroup.querySelector(".error-message")
-    formGroup.classList.add("error")
-    if (errorMessage) {
-      errorMessage.innerText = message
+  // Newsletter form submission
+  $("#newsletter-form").on("submit", function (e) {
+    e.preventDefault()
+    const emailInput = $(this).find('input[type="email"]')
+    if (isValidEmail(emailInput.val().trim())) {
+      alert("Thank you for subscribing to our newsletter!")
+      this.reset()
     } else {
-      const msgElement = document.createElement("div")
-      msgElement.classList.add("error-message")
-      msgElement.innerText = message
-      formGroup.appendChild(msgElement)
+      alert("Please enter a valid email address.")
     }
-  }
-
-  function setSuccessFor(input) {
-    const formGroup = input.parentElement
-    formGroup.classList.remove("error")
-    const errorMessage = formGroup.querySelector(".error-message")
-    if (errorMessage) {
-      formGroup.removeChild(errorMessage)
-    }
-  }
+  })
 
   function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
   }
 
-  // Newsletter form submission
-  const newsletterForm = document.getElementById("newsletter-form")
-  if (newsletterForm) {
-    newsletterForm.addEventListener("submit", (e) => {
-      e.preventDefault()
-      const emailInput = newsletterForm.querySelector('input[type="email"]')
-      if (isValidEmail(emailInput.value.trim())) {
-        alert("Thank you for subscribing to our newsletter!")
-        newsletterForm.reset()
-      } else {
-        alert("Please enter a valid email address.")
+  // Fade-in effect for elements
+  $(window).on("scroll", () => {
+    $(".fade-in").each(function () {
+      const elementTop = $(this).offset().top
+      const viewportBottom = $(window).scrollTop() + $(window).height()
+      if (elementTop < viewportBottom - 50) {
+        $(this).addClass("visible")
       }
     })
-  }
+  })
 })
 
